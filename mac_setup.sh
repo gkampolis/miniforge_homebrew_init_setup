@@ -14,12 +14,12 @@ echo "Installation finished."
 echo "Installing gnupg (gpg2), git and GitHub CLI,"
 echo "zsh: powerlevel10k, autosuggestions and syntax highlighting,"
 echo "and  alfred, caffeine, spotify and visual studio code."
-echo "This script will automatically enable zsh plugins for you."
-brew install gpg2 git gh pinentry-mac \
+echo "This script will automatically enable the zsh plugins for you."
+brew install gpg git gh pinentry-mac \
     powerlevel10k zsh-autosuggestions zsh-syntax-highlighting \
     alfred caffeine spotify visual-studio-code
 
-##################### COnfiguring zsh and gpg
+##################### Configuring zsh and gpg
 echo "Enabling zsh: autosuggestions..."
 echo 'source #{HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
 echo "Enabling zsh: syntax highlighting..."
