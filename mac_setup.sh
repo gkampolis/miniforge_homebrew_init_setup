@@ -1,9 +1,10 @@
 #!/bin/sh
 echo " "
 ##################### Command Line Tools from Xcode
-echo "Installing Command Line Tools from Xcode..."
-xcode-select --install
-echo "Installation finished."
+# This should be taken care by Homebrew automatically in the next step.
+# echo "Installing Command Line Tools from Xcode..."
+# xcode-select --install
+# echo "Installation finished."
 
 ##################### Homebrew 
 echo "Installing Homebrew..."
@@ -17,7 +18,9 @@ echo "and  alfred, caffeine, spotify and visual studio code."
 echo "This script will automatically enable the zsh plugins for you."
 brew install gpg git gh pinentry-mac \
     powerlevel10k zsh-autosuggestions zsh-syntax-highlighting \
-    alfred caffeine spotify visual-studio-code
+    iterm2 neofetch visual-studio-code \
+    alfred caffeine spotify \
+    pandoc microsoft-office
 
 ##################### Configuring zsh and gpg
 echo "Enabling zsh: autosuggestions..."
