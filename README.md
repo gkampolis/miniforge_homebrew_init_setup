@@ -11,7 +11,7 @@ The shell script itself is fairly easy to follow so have a look and modify accor
 ## Usage
 ```sh
 wget https://raw.githubusercontent.com/gkampolis/miniforge_homebrew_init_setup/main/mac_setup.sh
-# Modify teh script as you see fit, adding or removing packages etc.
+# Modify the script as you see fit, adding or removing packages etc.
 chmod +x mac_setup.sh && sh mac_setup.sh
 ```
 
