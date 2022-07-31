@@ -1,5 +1,23 @@
 #!/bin/sh
-echo " "
+
+# Faster Dock Hiding
+defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
+
+# Undo faster hiding
+# defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5 ;killall Dock
+
+# Add a Dock spacer
+defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}' && killall Dock
+
+# Add a half height Dock spacer
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}' && killall Dock
+
+# Change default screenshot to JPG instead of PNG
+defaults write com.apple.screencapture type jpg
+
+# Make hidden apps trasnparent instead (on the dock)
+defaults write com.apple.Dock showhidden -bool TRUE && killall Dock
+
 ##################### Command Line Tools from Xcode
 # This should be taken care by Homebrew automatically in the next step.
 # echo "Installing Command Line Tools from Xcode..."
