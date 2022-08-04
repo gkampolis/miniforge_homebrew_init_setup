@@ -37,21 +37,21 @@ echo "This script will automatically enable the zsh plugins for you."
 brew install gpg git gh pinentry-mac \
     powerlevel10k zsh-autosuggestions zsh-syntax-highlighting \
     iterm2 neofetch visual-studio-code \
-    alfred caffeine spotify \
+    alfred alt-tab caffeine spotify \
     pandoc microsoft-office
 
 ##################### Configuring zsh and gpg
 echo "Enabling zsh: autosuggestions..."
-echo 'source #{HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
+echo 'source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
 echo "Enabling zsh: syntax highlighting..."
-echo 'source #{HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >>~/.zshrc
+echo 'source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >>~/.zshrc
 echo "Enabling powerlevel10k..."
-echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+echo 'source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
-if [ -d "~/.gnupg/" ] 
+if [ -d "~/.gnupg/" ] # check if folder exists already
 then
     echo "Directory ~/.gnupg already exists. Checking for gpg-agent.conf..."
-    if [ -f "~/.gnupg/gpg-agent.conf"]
+    if [ -f "~/.gnupg/gpg-agent.conf"] # check if file exists
     then
         echo "~/.gnupg/gpg-agent.conf exists. Adding at the end." 
         echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" >>~/.gnupg/gpg-agent.conf
